@@ -23,6 +23,7 @@ class Ledger {
 
     public function getCategories(): array {
         $categories = array_map(fn($entry) => $entry->getCategory()->getName(), $this->entries);
+        // var_dump($data);
         return array_unique($categories);
     }
 
@@ -35,12 +36,14 @@ class Ledger {
     private function loadData(): void {
         if (file_exists($this->dataFile)) {
             $data = json_decode(file_get_contents($this->dataFile), true);
+            // var_dump($data);
             $this->entries = array_map(fn($entryData) => Entry::fromArray($entryData), $data);
         }
     }
 
     private function saveData(): void {
         $data = array_map(fn($entry) => $entry->toArray(), $this->entries);
+        // var_dump($data);
         file_put_contents($this->dataFile, json_encode($data, JSON_PRETTY_PRINT));
     }
 }

@@ -33,6 +33,7 @@ class Entry {
         return [
             'type' => $this->type,
             'amount' => $this->amount,
+            // 'category' => $this->category->Name(),
             'category' => $this->category->getName(),
             'description' => $this->description,
         ];

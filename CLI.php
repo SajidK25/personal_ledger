@@ -73,6 +73,7 @@ class CLI {
 
     private function viewEntries(string $type): void {
         $entries = $this->ledger->getEntries($type);
+        // var_dump($entries);
         foreach ($entries as $entry) {
             echo "{$entry->getDescription()} - {$entry->getAmount()} ({$entry->getCategory()->getName()})\n";
         }
