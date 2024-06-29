@@ -1,0 +1,14 @@
+[
+    {
+        "type": "income",
+        "amount": 100000,
+        "category": "Salary",
+        "description": "Remotejob salary"
+    },
+    {
+        "type": "expense",
+        "amount": 25000,
+        "category": "Food",
+        "description": "Monthly family meals"
+    }
+]
